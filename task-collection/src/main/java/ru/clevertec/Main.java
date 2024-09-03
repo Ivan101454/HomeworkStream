@@ -1,46 +1,52 @@
-package by.clevertec;
+package ru.clevertec;
 
-import by.clevertec.model.Animal;
-import by.clevertec.model.Car;
-import by.clevertec.model.Examination;
-import by.clevertec.model.Flower;
-import by.clevertec.model.House;
-import by.clevertec.model.Person;
-import by.clevertec.model.Student;
-import by.clevertec.util.Util;
+import ru.clevertec.model.Animal;
+import ru.clevertec.model.Car;
+import ru.clevertec.model.Examination;
+import ru.clevertec.model.Flower;
+import ru.clevertec.model.House;
+import ru.clevertec.model.Person;
+import ru.clevertec.model.Student;
+import ru.clevertec.util.Util;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
         task1();
-        task2();
-        task3();
-        task4();
-        task5();
-        task6();
-        task7();
-        task8();
-        task9();
-        task10();
-        task11();
-        task12();
-        task13();
-        task14();
-        task15();
-        task16();
-        task17();
-        task18();
-        task19();
-        task20();
-        task21();
-        task22();
+//        task2();
+//        task3();
+//        task4();
+//        task5();
+//        task6();
+//        task7();
+//        task8();
+//        task9();
+//        task10();
+//        task11();
+//        task12();
+//        task13();
+//        task14();
+//        task15();
+//        task16();
+//        task17();
+//        task18();
+//        task19();
+//        task20();
+//        task21();
+//        task22();
     }
 
     public static void task1() {
         List<Animal> animals = Util.getAnimals();
-//        animals.stream() Продолжить ...
+
+        animals.stream()
+                .filter(animal -> (animal.getAge() >= 10 && animal.getAge() < 20))
+                .sorted(Comparator.comparing(Animal::getAge))
+                .skip(2).limit(7)
+                .forEach(System.out::println);
     }
 
     public static void task2() {
